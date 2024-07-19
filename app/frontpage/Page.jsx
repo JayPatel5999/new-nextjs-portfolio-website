@@ -73,6 +73,22 @@ function page() {
           <Status isAvailable />
         </div>
       </div>
+
+      <div className="mt-6 max-w-3xl">
+        <h3 className="text-neutral-500 text-xs font-interbold uppercase">
+          About Me
+        </h3>
+        <p className="dark:text-neutral-300 font-InterMedium mt-3">
+          I’m crafting exceptional products that blend Design and Engineering.
+          Making Impactful experiences with beauty and function. Currently ,
+          looking for new opportunities to collaborate with people.
+        </p>
+        <p className="mt-6 dark:text-neutral-300 max-sm:text-sm font-InterMedium">
+          My objective is straightforward, to create exceptional things
+          alongside exceptional individuals. By collaborating harmoniously, we
+          can accomplish this goal.
+        </p>
+      </div>
     </div>
   );
 }
