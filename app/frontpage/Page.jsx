@@ -51,7 +51,7 @@ let link = [
     bttn: "View Project",
   },
 ];
-function page() {
+function Frontpage() {
   const [show, setShow] = useState(link[0]);
   return (
     <div className="mt-32">
@@ -181,11 +181,88 @@ function page() {
           <div className=" bg-gradient-to-1 absolute right-0 z-10 dark:from-[#161616] dark:via-[#161616] from=[#fff] via-[#fff] to-transparent w-16 rounded-md h-9 transition-all ease-in duration-200 " />
         </div>
       </div>
+
+      {/* Experience */}
+
+      <div className="">
+        <div className="">
+          {link.map((each, i) => (
+            <div key={each.title} className="my-8 p-2 rounded-md">
+              <div className="border border-neutral-700 rounded-full w-fit px-2 p-1 flex items-center">
+                <span className="text-xs text-neutral-700 dark:text-neutral-300">
+                  {each.date}
+                </span>
+              </div>
+
+              <div>
+                <div className="flex gap-x-4 my-6">
+                  <img
+                    className="w-14 h-14 rounded-full"
+                    src={each.imgLink}
+                    alt=""
+                  />
+                  <div>
+                    <h1 className="font-InterBold text-lg">{each.title}</h1>
+                    <Link className="font-semibold hover:underline" href={"/"}>
+                      {" "}
+                      {each.sub}{" "}
+                    </Link>
+                  </div>
+                </div>
+
+                <p className=" text-neutral-500 text-lg max-w-3xl">
+                  {each.subTitle}
+                </p>
+              </div>
+
+              {show.bttn && (
+                <button className="mt-10 border border-neutral-700/30 rounded-md px-2 py-2 flex justify-between items-center gap-x-2 lg:w-36 bg-neutral-800/20 text-sm text-neutral-900 dark:text-neutral-200 font-semibold">
+                  <span>My Experience</span>
+                  <PiLockThin className="text-neutral-900 dark:text-neutral-200" />
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Marque texts*/}
+
+      <div>
+        <div className="marquee relative my-24 h-10 max-w-6xl overflow-x-hidden">
+          <div className=" bg-gradient-to-r absolute z-10 from=[#fff] via-[#fff] dark:from-[#161616] dark:via-[#161616] to-transparent w-20 rounded-md h-9 transition-all ease-in duration-200 " />
+          <motion.div
+            className="track"
+            variants={marqueeVarients}
+            animate="animate">
+            <div className=" flex gap-x-500 mt-200 uppercase font-semibold justify-evenly text-sm text-neutral-700">
+              ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS
+              ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS
+              ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS
+              ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS ✦ CONTACTS
+            </div>
+          </motion.div>
+          <div className=" bg-gradient-to-1 absolute right-0 z-10 dark:from-[#161616] dark:via-[#161616] from=[#fff] via-[#fff] to-transparent w-16 rounded-md h-9 transition-all ease-in duration-200 " />
+        </div>
+      </div>
+
+      <div>
+        <p className="text-lg ">
+          I take pleasure in meeting new people and am enthusiastic about
+          assisting with any queries you may have.
+        </p>
+
+        <p className="mt-4">
+          Additionally, I love discussing forgotten or unfinished projects and
+          exploring the fascinating topic of how artificial intelligence could
+          potentially dominate the world.
+        </p>
+      </div>
     </div>
   );
 }
 
-export default page;
+export default Frontpage;
 
 const marqueeVarients = {
   animate: {
