@@ -21,9 +21,9 @@ const Status = [
   },
 ];
 
-function Statuspage({ isAvailbale, Relaxing, className }) {
+function Statuspage({ isAvailable, Relaxing, className }) {
   let [status, setStatus] = useState(
-    isAvailbale
+    isAvailable
       ? Status[0].Available
       : Relaxing
       ? Status[0].Relaxing
@@ -33,7 +33,7 @@ function Statuspage({ isAvailbale, Relaxing, className }) {
   let bgColorClass =
     status === Status[0].Available
       ? "bg-lime-400"
-      : Status[0].Relaxing
+      : status === Status[0].Relaxing
       ? "bg-lime-400 "
       : "bg-red-600 ";
   //
